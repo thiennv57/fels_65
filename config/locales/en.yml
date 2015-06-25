@@ -20,4 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "Welcome to E-Learning"
+  base_title: "E-Learning"
+  about: "About"
+  home: "Home"
+  word_list: "Work List"
+  categories: "Categories"
+  lesson: "Lesson"
+  user_name: "User name"
+  change_profile: "Change Profile"
+  log_in: "Log in"
+  log_out: "Log out"
+  sign_up: "Sign up"
+

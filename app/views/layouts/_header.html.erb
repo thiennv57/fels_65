@@ -1,0 +1,20 @@
+<header>
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><%= link_to I18n.t("home") %></li>
+      <li role="presentation"><%= link_to I18n.t "word_list" %></li>
+      <li role="presentation"><%= link_to I18n.t "categories" %></li>
+      <li role="presentation"><%= link_to I18n.t "lesson" %></li>
+
+      <li class="dropdown pull-right">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= t "user_name" %><span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <li><%= link_to I18n.t "change_profile" %></li>
+          <li class="divider"></li>
+          <li><%= link_to I18n.t "log_out" %></li>
+        
+        </ul>
+      </li>
+    </ul>
+  </div>
+</header>
