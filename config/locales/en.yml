@@ -21,7 +21,8 @@
 
 en:
   hello: "Welcome to E-Learning"
-  base_title: "E-Learning"
+  base_title: "E-Learning System"
+  e_learning: "E-Learning"
   about: "About"
   home: "Home"
   word_list: "Work List"
@@ -32,4 +33,10 @@ en:
   log_in: "Log in"
   log_out: "Log out"
   sign_up: "Sign up"
+  users: "Users"
+  word_list: "Word List"
+  lesson: "Lesson"
+  remember_me: "Remember me on this computer"
+  invalid_email_password: "Invalid email/password combination"
+  done: "Done"
 

@@ -1,8 +1,10 @@
-<footer class="footer">
+<footer class="container">
   <small>
     <%= t "base_title" %>
   </small>
   <nav class="pull-right">
-    <%= link_to I18n.t "about" %></li>
+    <%= link_to t("home"), root_path %>
+    <span>|</span>
+    <%= link_to t("about") , about_path %>
   </nav>
 </footer> 
