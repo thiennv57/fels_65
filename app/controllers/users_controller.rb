@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @users = User.paginate page: params[:id], per_page: Settings.paginate_per_page
+  end
+
   def new
     @user = User.new
   end
@@ -37,5 +41,17 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit :name, :email, :avatar, :password, :password_confirmation
+  end
+
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = t "please_log_in"
+      redirect_to login_url
+    end
+  end
+
+  def correct_user
+    redirect_to(root_url) unless @user == current_user?(@user)
   end
 end
