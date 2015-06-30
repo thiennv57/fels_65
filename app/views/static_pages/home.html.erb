@@ -1,31 +1,34 @@
 <% provide :title, t("home") %>
-  <% if logged_in? %>
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        <b><%= t "e_learning" %></b>
+<% if logged_in? %>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <b><%= t "e_learning" %></b>
+    </div>
+    <div class="row">
+      <div class="col-md-3" style="padding-left: 50px;">
+        <img src="http://vtown.vn/uploads/company/9/03072013/thumbnail/Framgia_logo.png" alt="avatar">
+        <div class="caption">
+          <section class="user_info">
+            <%= render "shared/user_info" %>
+          </section>
+        </div>
       </div>
-      <div class="row">
-        <div class="col-md-2" style="padding-left: 50px;">
-          <img src="http://vtown.vn/uploads/company/9/03072013/thumbnail/Framgia_logo.png" alt="avatar">
-          <div class="caption">
-          </div>
-        </div>
-        <div class="col-md-8" style="">
-          <br/>
-          <a href="#" class="action-button shadow animate blue" style="left: 150px;"> <%= t "word_list" %></a>
-          <a href="#" class="action-button shadow animate red" style="left: 250px;"><%= t "lesson" %></a>
-        </div>
-        <div class="col-md-2">
-          <div class="caption">
-          </div>
+      <div class="col-md-8" style="">
+        <br/>
+        <a href="#" class="action-button shadow animate blue" style="left: 100px;"> <%= t "word_list" %></a>
+        <a href="#" class="action-button shadow animate red" style="left: 200px;"><%= t "lesson" %></a>
+      </div>
+      <div class="col-md-1">
+        <div class="caption">
         </div>
       </div>
     </div>
-  <% else %>
-    <div class="jumbotron" align="center">
-      <h2> <%= t "hello" %></h2>
-      <%= link_to t("log_in"), login_path, class: "btn btn-lg btn-primary" %>
-      <br/><br/>
-      <%= link_to t("sign_up"), signup_path, class: "btn btn-lg btn-primary" %>
-    </div>
-  <% end %>
+  </div>
+<% else %>
+  <div class="jumbotron" align="center">
+    <h2> <%= t "hello" %></h2>
+    <%= link_to t("log_in"), login_path, class: "btn btn-lg btn-primary" %>
+    <br/><br/>
+    <%= link_to t("sign_up"), signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+<% end %>
