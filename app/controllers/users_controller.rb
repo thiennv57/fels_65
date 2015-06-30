@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
-  before_action :correct_user,   only: [:edit, :update]
-  
+  before_action :logged_in_user, except: [:show, :create, :new]
+  before_action :correct_user, only: [:edit, :update]
+ 
   def index
     @users = User.paginate page: params[:id], per_page: Settings.paginate_per_page
   end
