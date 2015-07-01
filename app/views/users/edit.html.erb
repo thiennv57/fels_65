@@ -1,0 +1,27 @@
+<% provide :title, t("update_account") %>
+<div class="row">
+  <div class="col-md-3">
+    <h1><%= t("update_account") %></h1>
+    <%= form_for @user do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :password %><br>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation %><br>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+      <br>
+      <%= f.file_field :avatar, class: "filestyle", id: "user_avatar", accept: Settings.user.avatar.accepted_format %>
+      <br>
+      <%= f.submit t("done"), class: "btn btn-primary pull-right" %>
+    <% end %>  
+  </div>
+  <div class="col-md-9">
+    <%= image_tag Settings.signup_page.right_photo.url, size: Settings.signup_page.right_photo.size %>
+</div>

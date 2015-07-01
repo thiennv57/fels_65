@@ -2,3 +2,41 @@ maximum_name_length: 20
 maximum_email_length: 50
 minimum_password_length: 6
 remember_me_check: "1"
+admin:
+  email: nhs3108@gmail.com
+signup_page:
+  right_photo:
+    url: big-elearning.png
+    size: 900x550
+update_acc_page:
+  right_photo:
+    url: big-elearning.png
+    size: 900x550
+user:
+  name:
+    min_size: 2
+    max_size: 30
+    is_presence: true
+  email:
+    format:
+    max_size: 255
+    is_unique: true
+    is_presence: true
+  password:
+    min_size: 6
+    max_size: 255
+    is_presence: true
+    is_allow_blank: true
+  avatar:
+    is_presence: true
+    is_allow_blank: true
+    max_size_in_MB: 2
+    unit: MB
+    accepted_format: image/jpeg,image/gif,image/png
+    store_dir: "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    extension_white_list: 
+      - jpg 
+      - jpeg
+      - gif
+      - png
+reset_pass_expered_in_hour: 2
