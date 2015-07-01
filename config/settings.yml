@@ -36,7 +36,7 @@ user:
     accepted_format: image/jpeg,image/gif,image/png
     store_dir: "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
     extension_white_list: 
-      - jpg 
+      - jpg
       - jpeg
       - gif
       - png
@@ -44,3 +44,7 @@ category:
   name:
     max_size: 100
 reset_pass_expered_in_hour: 2
+choices:
+  follow: "follow"
+  unfollow: "unfollow"
+  follow_form: "follow_form"

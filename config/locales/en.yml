@@ -73,3 +73,5 @@ en:
   category: "category"
   description: "description"
   tool: "tool"
+  follow: "Follow"
+  unfollow: "Unfollow"
