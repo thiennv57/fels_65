@@ -40,4 +40,7 @@ user:
       - jpeg
       - gif
       - png
+category:
+  name:
+    max_size: 100
 reset_pass_expered_in_hour: 2

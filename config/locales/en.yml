@@ -65,3 +65,11 @@ en:
   enter_ur_email_to_reset_password: "Enter your email to reset your password"
   dashboard: "dashboard"
   admin: "admin"
+  create_successfully: "create successfully"
+  delete_successfully: "delete successfully"
+  create_failed: "create failed"
+  delete: delete
+  Confirm_action: "Confirm %{action} ?"
+  category: "category"
+  description: "description"
+  tool: "tool"
