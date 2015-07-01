@@ -61,3 +61,5 @@ en:
   account_activated: "Account activated!"
   invalid_activation_link: "Invalid activation link"
   enter_ur_email_to_reset_password: "Enter your email to reset your password"
+  dashboard: "dashboard"
+  admin: "admin"
