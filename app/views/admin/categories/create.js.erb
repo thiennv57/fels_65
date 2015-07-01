@@ -1,0 +1,3 @@
+$("#category_name").val("");
+$("#category_description").val("");
+$("#category_list_table > tbody").append("<%= escape_javascript(render('admin/categories/category', category: @category)) %>");
