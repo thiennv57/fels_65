@@ -47,11 +47,11 @@ class User < ActiveRecord::Base
 
   def remember
     self.remember_token = User.new_token
-    update_attributes :remember_digest, User.digest(remember_token)
+    update_attributes remember_digest: User.digest(remember_token)
   end
 
   def forget
-    update_attributes :remember_token, nil
+    update_attributes remember_digest: nil
   end
 
   def follow other_user

@@ -34,6 +34,8 @@ en:
   log_out: "Log out"
   sign_up: "Sign up"
   users: "Users"
+  all_users: "All users"
+  view_profile: "View profile"
   word_list: "Word List"
   lesson: "Lesson"
   remember_me: "Remember me on this computer"
