@@ -4,4 +4,6 @@ class Word < ActiveRecord::Base
   accepts_nested_attributes_for :answers, allow_destroy: true,
       reject_if: proc { |a| a[:mean].blank? }
   validates :word, presence: Settings.word.word.is_presence
+
+  scope :in_category, ->category_id{where category_id: category_id if category_id.present?}
 end

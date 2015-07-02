@@ -56,3 +56,5 @@ answer:
 word:
   word:
     is_presence: true
+search_form:
+  blank: ""
