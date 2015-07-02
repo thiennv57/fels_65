@@ -1,10 +1,10 @@
-<div class="container">
-  <nav>
-    <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active" role="tab" data-toggle="tab" ><%= link_to t("home") %></li>
-      <li role="presentation" role="tab" data-toggle="tab"><%= link_to t("word_list"),"#" %></li>
-      <li role="presentation" role="tab" data-toggle="tab"><%= link_to t("categories"),"#" %></li>
-      <li role="presentation" role="tab" data-toggle="tab"><%= link_to t("lesson"),"#" %></li>
+<header class="navbar navbar-fixed-top" style="background:#505050">
+  <div class="container">
+    <ul class="nav nav-pills">
+      <li role="presentation"><%= link_to t("home"), root_url %></li>
+      <li role="presentation"><%= link_to t("word_list"), "#" %></li>
+      <li role="presentation"><%= link_to t("categories"), categories_path %></li>
+      <li role="presentation"><%= link_to t("lesson"),"#" %></li>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
           <li><%= link_to t("user"), users_path %></li>
@@ -21,5 +21,6 @@
         <% end %>
       </ul>
     </ul>
-  </nav>
-</div>
+  </div>
+</header>
+
