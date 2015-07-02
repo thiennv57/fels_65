@@ -48,3 +48,11 @@ choices:
   follow: "follow"
   unfollow: "unfollow"
   follow_form: "follow_form"
+answer:
+  num_of_ans: 4
+  mean:
+    is_presence: true
+    allow_destroy: true
+word:
+  word:
+    is_presence: true
