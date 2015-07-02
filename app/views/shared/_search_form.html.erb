@@ -1,0 +1,31 @@
+<%= form_for words_path, method: :get do |f| %>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <b><%= t "categories" %></b>
+    <div id="search-field">
+      <div class="col-md-6">
+        <%= collection_select(Settings.search_form.blank,
+                              :category_id, @categories, :id,
+                              :name, {prompt: false},
+                              {class: "form-control"}) %>
+        <table class="table table-bordered">
+          <% {learned: t("learned"), not_learned: t("not_learned"),
+              all_word: t("all")}.each do |key, value| %>
+            <tr>
+              <td><%= value %></td>
+              <td>
+                <input type="radio" value="<%= key %>" name="filter">
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <button class="btn btn-success">
+        <span class="glyphicon glyphicon-search"> <%= t "search" %></span>
+      </button>
+    </div>
+  </div>
+  <hr>
+<% end %>
