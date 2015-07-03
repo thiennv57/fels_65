@@ -12,6 +12,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @activities = @user.activities.recent.paginate page: params[:page],
+      per_page: Settings.paginate_per_page
   end
 
   def edit

@@ -89,3 +89,5 @@ en:
   not_learn: "Not learned"
   all: "All"
   search: "Search"
+  follow_user: "You follow %{name}"
+  unfollow_user: "You unfollow %{name}"

@@ -61,3 +61,5 @@ word:
 search_form:
   blank: ""
   select_category: "Please select the category"
+activity:
+  recent: "created_at DESC"

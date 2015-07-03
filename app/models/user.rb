@@ -56,10 +56,18 @@ class User < ActiveRecord::Base
 
   def follow other_user
     active_relationships.create followed_id: other_user.id
+    Activity.create title: I18n.t("follow_user",
+      name: other_user.name), user_id: self.id
   end
 
   def unfollow other_user
     active_relationships.find_by(followed_id: other_user.id).destroy
+    Activity.create title: I18n.t("unfollow_user",
+          name: other_user.name), user_id: self.id
+  end
+
+  def feed
+    Activity.followed self
   end
 
   def following? other_user

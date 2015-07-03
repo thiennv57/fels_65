@@ -15,7 +15,7 @@ body
 {
   position: relative;
   padding: 10px 40px;
-  margin: 0px 10px 10px 0px;
+  margin: 50px 10px 50px 0px;
   float: left;
   border-radius: 10px;
   font-family: 'Pacifico', cursive;
@@ -26,7 +26,7 @@ body
 
 .blue
 {
-  left: 150px;
+  left: 0px;
   background-color: #3498DB;
   border-bottom: 5px solid #2980B9;
   text-shadow: 0px -2px #2980B9;
@@ -34,12 +34,11 @@ body
 
 .red
 {
-  left: 250px;
+  left: 150px;
   background-color: #E74C3C;
   border-bottom: 5px solid #BD3E31;
   text-shadow: 0px -2px #BD3E31;
 }
-
 .action-button:active
 {
   transform: translate(0px,5px);
