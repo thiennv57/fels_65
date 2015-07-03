@@ -1,3 +1,5 @@
-<h1><%= current_user.name %></h1>
+<span><%= image_tag current_user.avatar.url,
+  size: Settings.user.avatar.profile_avatar_size if current_user.avatar  %>
+</span>
+<h3><%= current_user.name %></h3>
 <span><%= link_to t("view_profile"), current_user %></span>
-
