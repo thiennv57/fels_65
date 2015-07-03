@@ -12,10 +12,14 @@
           </section>
         </div>
       </div>
-      <div class="col-md-8" style="">
-        <br/>
-        <%= link_to t("word_list"),"#", class: "action-button shadow animate blue" %>
-        <%= link_to t("lesson"),"#", class: "action-button shadow animate red" %>
+      <div class="col-md-8">
+        <%= link_to t("word_list"), words_path, class: "action-button shadow animate blue" %>
+        <%= link_to t("lesson"), "#", class: "action-button shadow animate red" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9 col-md-offset-3">
+        <%= render "shared/feed" %>
       </div>
     </div>
   </div>
@@ -23,7 +27,7 @@
   <div class="jumbotron" align="center">
     <h2> <%= t "hello" %></h2>
     <%= link_to t("log_in"), login_path, class: "btn btn-lg btn-primary" %>
-    <br/><br/>
+    <br><br>
     <%= link_to t("sign_up"), signup_path, class: "btn btn-lg btn-primary" %>
   </div>
 <% end %>
