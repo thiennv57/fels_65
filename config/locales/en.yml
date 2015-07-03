@@ -89,3 +89,7 @@ en:
   not_learn: "Not learned"
   all: "All"
   search: "Search"
+  import_successfully: "import successfully"
+  file_is_required: "file_is_required"
+  import_using_fileType_file: "Import using %{fileType} file"
+  download: "download"

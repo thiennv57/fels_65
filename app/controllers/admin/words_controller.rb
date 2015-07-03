@@ -2,11 +2,16 @@ class Admin::WordsController < ApplicationController
   before_action :set_word, only: [:show, :edit, :update, :destroy]
   
   def index
-    @categories = Category.all
-    @words = Word.all
-    @word = Word.new
-    Settings.answer.num_of_ans.times do 
-      @answer = @word.answers.build
+    respond_to do |format|
+      format.html do
+        @categories = Category.all
+        @words = Word.all
+        @word = Word.new
+        Settings.answer.num_of_ans.times do 
+          @answer = @word.answers.build
+        end
+      end
+      format.csv {send_data export_csv}
     end
   end
 
@@ -54,5 +59,19 @@ class Admin::WordsController < ApplicationController
 
   def word_params
     params.require(:word).permit :word, :category_id, answers_attributes: [:id, :mean, :is_correct, :_destroy]
+  end
+
+  def export_csv
+    headers = %w{category_name category_description word mean is_correct}
+    CSV.generate(headers: true) do |csv|
+      csv << headers
+      Category.all.each do |category|
+        category.words.each do |word|
+          word.answers.each do |answer|
+            csv << [category.name, category.description, word.word, answer.mean, answer.is_correct]
+          end
+        end
+      end
+    end
   end
 end
