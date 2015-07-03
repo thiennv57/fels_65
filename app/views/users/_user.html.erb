@@ -1,3 +1,13 @@
-<li>
-  <%= link_to user.name, user %>
-</li>
+<div class="row">
+  <div class="col-md-2">
+    <%= image_tag user.avatar.url,
+      size: Settings.user.avatar.list_user_avatar_size if user.avatar  %>
+  </div>
+  <div class="col-md-2">
+    <%= link_to user.name, user %>
+  </div>
+  <div class="col-md-4">
+    <%= user.email %>
+  </div>
+  <div class="col-md-4"></div>
+</div>

@@ -74,6 +74,8 @@ en:
   tool: "tool"
   follow: "Follow"
   unfollow: "Unfollow"
+  following: "followings"
+  follower: "followers"
   start: "Start"
   update_successfully: "update successfully"
   ignore: "ignore"

@@ -40,6 +40,8 @@ user:
       - jpeg
       - gif
       - png
+    profile_avatar_size: "200x200"
+    list_user_avatar_size: "50x50"
 category:
   name:
     max_size: 100
@@ -58,3 +60,4 @@ word:
     is_presence: true
 search_form:
   blank: ""
+  select_category: "Please select the category"
