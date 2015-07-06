@@ -1,6 +1,20 @@
 <br>
 <div class="row">
   <div class="col-md-8">
+    <div class="row">
+      <h3 class="text-info">
+        <%= t("import_using_fileType_file", fileType: Settings.fileType_to_import_words) %>
+      </h3>
+      <%= form_tag admin_imports_path, method: :post, multipart: true do %>
+        <div class="col-md-11">
+          <%= file_field_tag :file, class: "filestyle", required: true %>
+        </div>
+        <div class="col-md-1">
+          <%= submit_tag t("done"), class: "btn btn-default pull-right" %>
+        </div>
+      <% end %>
+    </div>
+    <hr>
     <table id="word_list_table" class="table table-hover table-bordered text-center">
       <tbody>
         <tr>
@@ -14,6 +28,9 @@
         <% end %>
       </tbody>
     </table>
+    <a href="<%= admin_words_path(format: "csv") %>" class="pull-right btn btn-primary">
+      <span class="glyphicon glyphicon-download-alt"></span><%= t("download").capitalize %>
+    </a>
   </div>
   <div class="col-md-4">
     <div>

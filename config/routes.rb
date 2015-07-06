@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+
   namespace :admin do
     root "dashboard#index"
     resources :categories
     resources :words
+    resources :imports, only: [:create]
   end
 
   root "static_pages#home"

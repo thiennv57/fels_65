@@ -61,3 +61,4 @@ word:
 search_form:
   blank: ""
   select_category: "Please select the category"
+fileType_to_import_words: csv
