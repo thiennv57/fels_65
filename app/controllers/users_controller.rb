@@ -12,8 +12,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    if request.path != user_path(@user)
+      redirect_to @user, status: :moved_permanently
+    end
     @activities = @user.activities.recent.paginate page: params[:page],
-      per_page: Settings.paginate_per_page
+                                                   per_page: Settings.paginate_per_page
   end
 
   def edit
@@ -40,7 +43,7 @@ class UsersController < ApplicationController
 
   private
   def set_user
-    @user = User.find params[:id]
+    @user = User.friendly.find params[:id]
   end
 
   def user_params

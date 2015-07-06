@@ -29,6 +29,8 @@ class User < ActiveRecord::Base
   validate :avatar_size
   before_save :downcase_email
   before_create :create_activation_digest
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
   def User.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
