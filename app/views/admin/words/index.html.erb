@@ -23,8 +23,10 @@
           <th class="text-center"><%= t("mean").capitalize %></th>
           <th class="text-center"><%= t("tool").capitalize %></th>
         </tr>
-        <% @words.each do |each_word| %>
-          <%= render "admin/words/word", each_word: each_word %>
+        <% @categories.each do |category| %> 
+          <% category.words.word_ordered.each do |word| %>
+            <%= render "admin/words/word", word: word %>
+          <% end %>
         <% end %>
       </tbody>
     </table>

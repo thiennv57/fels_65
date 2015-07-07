@@ -1,8 +1,10 @@
-<% each_word.answers.each do |answer| %>
-  <tr id="word-<%= each_word.id %>">
-    <td><%= each_word.category.name %></td>
-    <td><b><%= each_word.word %></b></td>
+<% word.answers.mean_ordered.each do |answer| %>
+  <tr id="word-<%= word.id %>">
+    <td><%= word.category.name %></td>
+    <td><b><%= word.word %></b></td>
     <td class="text-<%= answer.is_correct ? 'success' : 'danger' %>"><b><%= answer.mean %></b></td>
-    <td><%= link_to t("delete") , admin_word_path(each_word), method: :delete, data: {confirm: t("Confirm_action", action: t("delete"))}  %></td>
+    <td><%= link_to t("delete") , admin_word_path(word), method: :delete,
+      data: {confirm: t("Confirm_action", action: t("delete"))}  %>
+    </td>
   </tr>
 <% end %>

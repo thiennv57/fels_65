@@ -2,7 +2,7 @@ class Admin::CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index
-    @categories = Category.all
+    @categories = Category.name_ordered
     @category = Category.new
   end
 
@@ -29,7 +29,7 @@ class Admin::CategoriesController < ApplicationController
         format.js
       end
     else
-      @categories = Category.all
+      @categories = Category.category_ordered
       render :index
     end
   end
