@@ -9,10 +9,10 @@
           <%= category.description %>
         </p>
       </div>
-      <button type="button" class="btn btn-primary pull-right" 
-        style="margin: 25px 0px 75px 0px;">
-        <%= t "start" %>
-      </button>
+      <span class="col-md-1">
+        <%= link_to t("start"), new_category_lesson_path(category_id: category.id),
+          class: "btn btn-primary start-button" %>
+      </span>
     </div>
   </div>
 </div>
