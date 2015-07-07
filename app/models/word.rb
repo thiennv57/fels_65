@@ -5,5 +5,11 @@ class Word < ActiveRecord::Base
       reject_if: proc { |a| a[:mean].blank? }
   validates :word, presence: Settings.word.word.is_presence
 
-  scope :in_category, ->category_id{where category_id: category_id if category_id.present?}
+  scope :in_category, ->category{where category_id: category.id if category.id.present?}
+  scope :learned, ->user{where("id IN (
+    SELECT word_id FROM results WHERE lesson_id IN ( SELECT id FROM lessons WHERE user_id = ?
+      ))",user.id)}
+  scope :not_learned, ->user{where("id NOT IN (
+    SELECT word_id FROM results WHERE lesson_id IN ( SELECT id FROM lessons WHERE user_id = ?
+      ))",user.id)}
 end
