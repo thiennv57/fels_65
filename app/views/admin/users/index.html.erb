@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <tr>
+    <th><%= t("email").capitalize %></th>
+    <th><%= t("name").capitalize %></th>
+    <th><%= t("role").capitalize %></th>
+    <th><%= t("activated").capitalize %></th>
+    <th><%= t("tool").capitalize %></th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr class="<%= user.activated ? 'text-success' : 'text-default' %>">
+      <td><b><%= link_to user.email, user_path(user) %></b></td>
+      <td><b><%= user.name %></b></td>
+      <td class="<%= 'text-danger' if user.admin? %>">
+        <b><%= user.admin ? t("admin") : t("normal") %></b>
+      </td>
+      <td><b><%= user.activated ? t("activated") : t("not activated") %></b></td>
+      <td>
+        <%= link_to "" , admin_user_path(user), method: :delete,
+          data: {confirm: t("Confirm_action", action: t("delete"))},
+          class: "glyphicon glyphicon-remove" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= will_paginate @users %>

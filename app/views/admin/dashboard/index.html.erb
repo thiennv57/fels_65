@@ -1,2 +1,24 @@
 <%= provide :title, t("dashboard").titleize %>
 <h1><%= t "hello" %></h1>
+<div class="row">
+  <div class="col-md-3">
+    <a href="<%= admin_users_path %>">
+      <span class="glyphicon glyphicon-user" style="font-size: 80px"><%= @users_length %> </span>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="<%= admin_categories_path %>">
+      <span class="glyphicon glyphicon-book" style="font-size: 80px"><%= @categories_length %></span>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="<%= admin_words_path %>">
+      <span class="glyphicon glyphicon-font" style="font-size: 80px"><%= @words_length %></span>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="">
+      <span class="glyphicon glyphicon-file" style="font-size: 80px"><%= @lessons_length %></span>
+    </a>
+  </div>
+</div>
