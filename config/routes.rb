@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :words
     resources :imports, only: [:create]
+    resources :users
   end
 
   root "static_pages#home"

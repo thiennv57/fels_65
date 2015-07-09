@@ -1,7 +1,12 @@
 <tr id="category-<%= category.id %>">
   <td><%= category.name %></td>
   <td><%= category.description %></td>
-  <td><%= link_to t("delete"), admin_category_path(category), method: :delete,remote: true,
-                  data: {confirm: t("Confirm_action", action: t("delete"))} %>
+  <td><%= category.words.length %></td>
+  <td>
+    <%= link_to "", admin_category_path(category), method: :delete, remote: true,
+      data: {confirm: t("Confirm_action", action: t("delete"))},
+      class: "glyphicon glyphicon-remove" %>
+    <%= link_to "", edit_admin_category_path(category),
+      class: "glyphicon glyphicon-edit" %>
   </td>
 </tr>
