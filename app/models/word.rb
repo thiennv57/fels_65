@@ -13,4 +13,5 @@ class Word < ActiveRecord::Base
     SELECT word_id FROM results WHERE lesson_id IN ( SELECT id FROM lessons WHERE user_id = ?
       ))",user.id)}
   scope :random_words, ->{order "RANDOM()"}
+  scope :word_ordered, ->{order "word COLLATE NOCASE ASC"}
 end

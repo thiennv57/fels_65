@@ -4,8 +4,7 @@ class Admin::WordsController < ApplicationController
   def index
     respond_to do |format|
       format.html do
-        @categories = Category.all
-        @words = Word.all
+        @categories = Category.name_ordered
         @word = Word.new
         Settings.answer.num_of_ans.times do 
           @answer = @word.answers.build
@@ -31,8 +30,7 @@ class Admin::WordsController < ApplicationController
           format.js
         end
       else
-        @categories = Category.all
-        @words = Word.all
+        @categories = Category.name_ordered
         Settings.answer.num_of_ans.times do 
           @answer = @word.answers.build
         end
