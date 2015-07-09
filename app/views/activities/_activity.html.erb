@@ -3,13 +3,12 @@
     <%= image_tag current_user.avatar.url,
       size: Settings.user.avatar.list_user_avatar_size if current_user.avatar  %>
     <span class="text-info"><%= current_user.name %></span>
-    <% type = activity.type %>
-    <%= activity.status %>
-    <% if activity.status == "learned" %>
-      <%= t "activity.in" %>
-      <%= link_to type.category.name, type.category %>
+    <%= activity.type_action %>
+    <% if activity.type_action == Settings.activities.learned %>
+      <%=  Settings.activities.a_lesson_in %>
+      <%= link_to activity.target.category.name, categories_path %>
     <% else %>
-      <%= link_to type.name, type %>
+      <%= link_to activity.target.name, activity.target %>
     <% end %>
   </h4>
   <small style="color:gray">

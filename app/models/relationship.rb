@@ -1,5 +1,5 @@
 class Relationship < ActiveRecord::Base
-  include ActivityLog
+  include ActivityLogs
 
   belongs_to :follower, class_name: "User"
   belongs_to :followed, class_name: "User"
@@ -11,10 +11,10 @@ class Relationship < ActiveRecord::Base
 
   private
   def create_follow_activity
-    create_activity follower_id, followed_id, Settings.choices.follow
+    create_activity follower_id, followed_id, Settings.activities.followed
   end
 
   def create_unfollow_activity
-    create_activity follower_id, followed_id, Settings.choices.unfollow
+    create_activity follower_id, followed_id, Settings.activities.unfollowed
   end
 end
