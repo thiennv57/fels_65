@@ -62,3 +62,9 @@ search_form:
   blank: ""
   select_category: "Please select the category"
 fileType_to_import_words: csv
+lesson:
+  question_limit_words: 5
+  category_minimum_words: 5
+question:
+  add_index: 1
+

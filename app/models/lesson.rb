@@ -6,4 +6,9 @@ class Lesson < ActiveRecord::Base
   belongs_to :category
   belongs_to :category
   has_many :results, dependent: :destroy
- end
+  accepts_nested_attributes_for :results
+
+  def num_of_correct_ans
+    self.results.select{|result| result.answer.is_correct}.sum
+  end
+end

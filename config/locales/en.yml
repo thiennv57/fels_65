@@ -102,3 +102,7 @@ en:
   normal: "normal"
   update_category: "update category"
   num_of_words: "number of words"
+  submit_error: "Submit error"
+  question: "Question "
+  not_enough_word: "Not enough word to learn!"
+  result: "Result"

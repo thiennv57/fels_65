@@ -1,0 +1,19 @@
+<div class="result">
+  <hr>
+  <div class="col-md-5">
+    <%= t "question" %><%= f.index + Settings.question.add_index %>
+    <br>
+    <h1><%= f.object.word.word %></h1>
+  </div>
+  <div class="col-md-5">
+    <%= f.hidden_field :word_id, value: f.object.word.id %>
+    <% f.object.word.answers.each do |answer| %>
+      <div class="row">
+        <div class="col-md-2">
+          <%= f.radio_button :answer_id, answer.id %>
+        </div>
+        <div class="col-md-3"><%= answer.mean %></div>
+      </div>
+    <% end %>
+  </div>
+</div>
