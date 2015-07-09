@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20150625081209) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "type_id"
+    t.integer  "status"
   end
 
   add_index "activities", ["user_id"], name: "index_activities_on_user_id"

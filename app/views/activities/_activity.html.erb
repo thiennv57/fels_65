@@ -1,0 +1,23 @@
+<ol>
+  <h4>
+    <%= image_tag current_user.avatar.url,
+      size: Settings.user.avatar.list_user_avatar_size if current_user.avatar  %>
+    <span class="text-info"><%= current_user.name %></span>
+    <% type = activity.type %>
+    <%= activity.status %>
+    <% if activity.status == "learned" %>
+      <%= t "activity.in" %>
+      <%= link_to type.category.name, type.category %>
+    <% else %>
+      <%= link_to type.name, type %>
+    <% end %>
+  </h4>
+  <small style="color:gray">
+    <% if  Time.zone.now - activity.created_at < 1.day %>
+      <%= time_ago_in_words activity.created_at %>
+    <% else %>
+      <%=  activity.created_at %>
+    <% end %>
+  </small>
+  <hr>
+</ol>
