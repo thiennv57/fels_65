@@ -67,4 +67,8 @@ lesson:
   category_minimum_words: 5
 question:
   add_index: 1
-
+activities:
+  folowed: followed
+  unfollowed: unfollowed
+  learned: learned
+  a_lesson_in: a lesson in
