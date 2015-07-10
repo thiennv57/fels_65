@@ -8,10 +8,10 @@
       <%=  Settings.activities.a_lesson_in %>
       <%= link_to activity.target.category.name, categories_path %>
     <% else %>
-      <%= link_to activity.target.name, activity.target %>
+      <%= link_to activity.target.name, activity.type_action %>
     <% end %>
   </h4>
-  <small style="color:gray">
+  <small class = "activities">
     <% if  Time.zone.now - activity.created_at < 1.day %>
       <%= time_ago_in_words activity.created_at %>
     <% else %>
