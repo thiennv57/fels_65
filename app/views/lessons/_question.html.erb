@@ -10,7 +10,7 @@
     <% f.object.word.answers.each do |answer| %>
       <div class="row">
         <div class="col-md-2">
-          <%= f.radio_button :answer_id, answer.id %>
+          <%= f.radio_button :answer_id, answer.id, disabled: @is_time_over %>
         </div>
         <div class="col-md-3"><%= answer.mean %></div>
       </div>

@@ -64,7 +64,8 @@ search_form:
 fileType_to_import_words: csv
 lesson:
   question_limit_words: 5
-  category_minimum_words: 5
+  category_minimum_words: 3
+  duration_in_minutes: 30
 question:
   add_index: 1
 activities:
@@ -72,3 +73,6 @@ activities:
   unfollowed: unfollowed
   learned: learned
   a_lesson_in: a lesson in
+unit:
+  minute: "m"
+  second: "s"

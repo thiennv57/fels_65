@@ -12,6 +12,6 @@ class Word < ActiveRecord::Base
   scope :not_learned, ->user{where("id NOT IN (
     SELECT word_id FROM results WHERE lesson_id IN ( SELECT id FROM lessons WHERE user_id = ?
       ))",user.id)}
-  scope :random_words, ->{order "RANDOM()"}
+  scope :random_questions, ->{order "RANDOM() LIMIT #{Settings.lesson.question_limit_words}"}
   scope :word_ordered, ->{order "word COLLATE NOCASE ASC"}
 end
