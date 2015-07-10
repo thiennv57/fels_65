@@ -106,3 +106,6 @@ en:
   question: "Question "
   not_enough_word: "Not enough word to learn!"
   result: "Result"
+  lesson_result_for: "Lessons's result for "
+  lesson_x: "Lesson %{x}"
+  enter: "Enter"
