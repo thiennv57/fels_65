@@ -1,6 +1,10 @@
 class LessonsController < ApplicationController
   before_action :logged_in_user
 
+  def index
+    @lessons = Lesson.paginate page: params[:page], per_page: Settings.paginate_per_page
+  end
+
   def new
     @category = Category.find params[:category_id]
     @words = @category.words.not_learned(current_user).random_words.limit(Settings.lesson.question_limit_words)

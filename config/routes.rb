@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :categories, only: [:index, :show]
   resources :words, only: [:index]
+  resources :lessons, only: [:index, :show]
   resources :categories, only: [:index, :show] do
     resources :lessons
   end
