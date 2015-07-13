@@ -1,0 +1,12 @@
+<table class="table table-hover">
+  <tr class="success">
+    <th><%= t "word" %></th>
+    <th><%= t "meaning" %></th>
+    <% @words.each do |word| %>
+      <tr>
+        <td><%= word.word %></td>
+        <td><%= word.answers.find_by(is_correct: true).mean %></td>
+      </tr>
+    <% end %>
+  </tr>
+</table>
