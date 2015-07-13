@@ -3,8 +3,11 @@
 <h3 align="center"><%= @category.name %></h3>
 <h3 class="text-center"><%= @mark %></h3>
 <h3 class="pull-right text-danger">
+  <span id="hidden-data" data-time-over-msg="<%= t 'time_over' %>"
+    data-time-remaining="<%= @time_remaining %>">
+  </span>
   <span class="glyphicon glyphicon-time">&nbsp</span>
-  <b id="time-remaining" data-time-remaining="<%= @time_remaining %>"></b>
+  <b id="time-remaining"></b>
 </h3>
 <div class="container">
   <div class="row" id="lesson">
