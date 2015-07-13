@@ -1,4 +1,7 @@
 class Admin::ImportsController < ApplicationController
+  before_action :logged_in_user
+  before_action :admin_user
+  
   def create
     if file = params[:file]
       import_csv file
