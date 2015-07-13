@@ -68,7 +68,7 @@ lesson:
 question:
   add_index: 1
 activities:
-  folowed: followed
+  followed: followed
   unfollowed: unfollowed
   learned: learned
   a_lesson_in: a lesson in
