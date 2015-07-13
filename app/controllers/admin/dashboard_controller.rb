@@ -1,4 +1,7 @@
 class Admin::DashboardController < ApplicationController
+  before_action :logged_in_user
+  before_action :admin_user
+
   def index
     @users_length = User.count
     @categories_length = Category.count
