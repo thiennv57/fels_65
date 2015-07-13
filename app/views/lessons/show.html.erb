@@ -1,6 +1,11 @@
 <% provide :title, t("lesson") %>
 <h1 align="center"><%= t "lesson" %></h1>
 <h3 align="center"><%= @category.name %></h3>
+<h3 class="text-center"><%= @mark %></h3>
+<h3 class="pull-right text-danger">
+  <span class="glyphicon glyphicon-time">&nbsp</span>
+  <b id="time-remaining" data-time-remaining="<%= @time_remaining %>"></b>
+</h3>
 <div class="container">
   <div class="row" id="lesson">
     <%= form_for [@category, @lesson] do |f| %>
@@ -16,3 +21,5 @@
     <% end %>
   </div>
 </div>
+
+<%= javascript_include_tag "lesson_timer", "data-turbolinks-track": true %>
