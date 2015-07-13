@@ -8,7 +8,7 @@
       <%=  Settings.activities.a_lesson_in %>
       <%= link_to activity.target.category.name, categories_path %>
     <% else %>
-      <%= link_to activity.target.name, activity.type_action %>
+      <%= link_to activity.target.name, activity.target %>
     <% end %>
   </h4>
   <small class = "activities">
