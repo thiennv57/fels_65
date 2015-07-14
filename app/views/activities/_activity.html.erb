@@ -6,7 +6,8 @@
     <%= activity.type_action %>
     <% if activity.type_action == Settings.activities.learned %>
       <%=  Settings.activities.a_lesson_in %>
-      <%= link_to activity.target.category.name, categories_path %>
+      <%= link_to activity.target.category.name,
+        category_lesson_path(category_id: activity.target.category.id, id: activity.target.id) %>
     <% else %>
       <%= link_to activity.target.name, activity.target %>
     <% end %>
