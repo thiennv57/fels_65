@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
  
   def index
-    @users = User.paginate page: params[:id],
+    @users = User.paginate page: params[:page],
                            per_page: Settings.paginate_per_page
   end
 

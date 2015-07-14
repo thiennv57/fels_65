@@ -14,4 +14,5 @@ class Word < ActiveRecord::Base
       ))",user.id)}
   scope :random_questions, ->{order "RANDOM() LIMIT #{Settings.lesson.question_limit_words}"}
   scope :word_ordered, ->{order "word COLLATE NOCASE ASC"}
+  scope :get_all, ->user{}
 end
