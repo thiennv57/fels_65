@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-8" style="padding-left: 10px;">
+  <div class="col-md-8 category">
     <div class="list-group">
       <div class="list-group-item list-group-item-success">
         <h3 class="list-group-item-heading">
@@ -9,7 +9,7 @@
         </h3>
         <br>
         <ul class="list-group">
-          <% @words.each do |word| %>
+          <% @category.words.each do |word| %>
             <li class="list-group-item"> 
               <%= word.word %>
             </li>
@@ -19,13 +19,13 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4" style="padding-left: 10px;">
+  <div class="col-md-4 category">
     <div class="list-group">
       <div class="list-group-item list-group-item-info">
         <h3 class="list-group-item-heading">
           <%= t "lesson_result_for" %><%= @category.name %>
         </h3>
-        <p class="list-group-item-text" style="color:black">
+        <p class="list-group-item-text">
           <ul class="list-group">
             <li class="list-group-item">
               <% @category.lessons.each do |lesson| %>
